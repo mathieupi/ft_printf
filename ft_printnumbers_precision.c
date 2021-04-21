@@ -6,7 +6,7 @@
 /*   By: mmehran <mmehran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 09:45:36 by mmehran           #+#    #+#             */
-/*   Updated: 2021/04/21 11:34:53 by mmehran          ###   ########.fr       */
+/*   Updated: 2021/04/21 12:10:49 by mmehran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,4 @@ void	printintprecision(int nbr, t_spe *spe)
 		spe->printed_char++;
 	}
 	printbaseprecision(unbr, "0123456789", spe);
-}
-
-void	printpointerprecision(unsigned long long nbr, t_spe *spe)
-{
-	ft_putstr_fd("0x", 1);
-	ft_putnchar(spe->precision - ft_unbrlen(nbr, 16) - 2, '0', 1);
-	ft_putnbr_base_fd(nbr, 16, "0123456789abcdef", 1);
-	spe->printed_char += ft_max(ft_unbrlen(nbr, 16) + 2, spe->precision);
 }

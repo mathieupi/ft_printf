@@ -6,7 +6,7 @@
 /*   By: mmehran <mmehran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 09:45:40 by mmehran           #+#    #+#             */
-/*   Updated: 2021/04/21 09:52:08 by mmehran          ###   ########.fr       */
+/*   Updated: 2021/04/21 12:10:50 by mmehran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,10 @@ void	print_int(int nbr, t_spe *spe)
 
 void	print_pointer(unsigned long long nbr, t_spe *spe)
 {
-	if (!spe->precision && !nbr)
-	{
-		spe->printed_char += (width_padd(spe->width, 0, spe->flags));
-		return ;
-	}
+	spe->printed_char += ft_max(ft_unbrlen(nbr, 16) + 2, spe->precision);
 	if (spe->flags & 0b1)
-		printpointerprecision(nbr, spe);
-	spe->printed_char += width_padd(spe->width,
-			ft_max(ft_unbrlen(nbr, 16) + 2, spe->precision), spe->flags);
+		ft_putptr_fd(nbr, 1);
+	spe->printed_char += width_padd(spe->width, spe->printed_char, spe->flags);
 	if (!(spe->flags & 0b1))
-		printpointerprecision(nbr, spe);
+		ft_putptr_fd(nbr, 1);
 }

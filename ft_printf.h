@@ -6,7 +6,7 @@
 /*   By: mmehran <mmehran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 09:45:32 by mmehran           #+#    #+#             */
-/*   Updated: 2021/04/21 09:52:51 by mmehran          ###   ########.fr       */
+/*   Updated: 2021/04/21 12:10:48 by mmehran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void			print_str(char *str, t_spe *spe);
 void			printbaseprecision(unsigned long long nbr,
 					char *base, t_spe *spe);
 void			printintprecision(int nbr, t_spe *spe);
-void			printpointerprecision(unsigned long long nbr, t_spe *spe);
 
 void			print_int(int nbr, t_spe *spe);
 void			print_uint(unsigned long long nbr, char *base, t_spe *spe);
